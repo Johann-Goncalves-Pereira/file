@@ -1,8 +1,12 @@
-import { component$ } from '@builder.io/qwik';
-import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from '@builder.io/qwik-city';
-import { RouterHead } from './components/router-head/router-head';
+import { component$ } from "@builder.io/qwik";
+import {
+  QwikCityProvider,
+  RouterOutlet,
+  ServiceWorkerRegister,
+} from "@builder.io/qwik-city";
+import { RouterHead } from "./components/router-head/router-head";
 
-import './global.css';
+import "@total-typescript/ts-reset";
 
 export default component$(() => {
   /**
@@ -20,6 +24,7 @@ export default component$(() => {
         <RouterHead />
       </head>
       <body lang="en">
+        <noscript>This project need javascript to work</noscript>
         <RouterOutlet />
         <ServiceWorkerRegister />
       </body>
