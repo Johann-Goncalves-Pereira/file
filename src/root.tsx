@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import {
   QwikCityProvider,
   RouterOutlet,
@@ -8,6 +8,11 @@ import { RouterHead } from "./components/router-head/router-head";
 
 import "@total-typescript/ts-reset";
 
+import "./styles/_index.scss?inline";
+
+import styles from "./root.scss?inline";
+import "./styles/tokens/_tailwind.scss";
+
 export default component$(() => {
   /**
    * The root of a QwikCity site always start with the <QwikCityProvider> component,
@@ -15,6 +20,8 @@ export default component$(() => {
    *
    * Dont remove the `<head>` and `<body>` elements.
    */
+
+  useStylesScoped$(styles);
 
   return (
     <QwikCityProvider>

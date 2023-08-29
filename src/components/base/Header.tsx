@@ -1,8 +1,11 @@
-import { component$ } from "@builder.io/qwik";
+import { Signal, component$ } from "@builder.io/qwik";
 
-export const Header = component$(() => {
+type HeaderProps = {
+  ref?: Signal<Element | undefined>;
+};
+export const Header = component$(({ ref }: HeaderProps) => {
   return (
-    <header>
+    <header ref={ref} style={{ height: `5rem` }}>
       <h1>Header</h1>
     </header>
   );

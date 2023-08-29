@@ -1,0 +1,32 @@
+footer {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+
+  grid-column: 1/1;
+
+  height: calc(100dvh - var(--header-height) - var(--body-padding) * 2);
+
+  // pointer-events: none;
+}
+
+address {
+  height: 100%;
+
+  &:last-of-type {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    grid-column: -1/-1;
+
+    width: 4rem;
+
+    a {
+      display: grid;
+      place-items: center;
+      width: 100%;
+      padding-inline: 1rem;
+
+      writing-mode: vertical-rl;
+    }
+  }
+}
